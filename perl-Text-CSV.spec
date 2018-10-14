@@ -4,14 +4,14 @@
 #
 Name     : perl-Text-CSV
 Version  : 1.97
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-1.97.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-1.97.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtext-csv-perl/libtext-csv-perl_1.95-1.debian.tar.xz
 Summary  : 'comma-separated values manipulator (using XS or PurePerl)'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Text-CSV-license
+Requires: perl-Text-CSV-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -24,7 +24,7 @@ fields into a CSV string and parse a CSV string into fields.
 %package dev
 Summary: dev components for the perl-Text-CSV package.
 Group: Development
-Provides: perl-Text-CSV-devel
+Provides: perl-Text-CSV-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-Text-CSV package.
@@ -67,12 +67,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Text-CSV
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Text-CSV/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Text-CSV
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Text-CSV/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -81,8 +81,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Text/CSV.pm
-/usr/lib/perl5/site_perl/5.26.1/Text/CSV_PP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Text/CSV.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Text/CSV_PP.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -90,5 +90,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Text::CSV_PP.3
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Text-CSV/deblicense_copyright
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Text-CSV/deblicense_copyright
