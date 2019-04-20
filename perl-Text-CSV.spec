@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-CSV
 Version  : 1.99
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-1.99.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-1.99.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libt/libtext-csv-perl/libtext-csv-perl_1.95-1.debian.tar.xz
