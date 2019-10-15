@@ -1,5 +1,5 @@
 PKG_NAME := perl-Text-CSV
-URL = https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-1.99.tar.gz
-ARCHIVES = http://http.debian.net/debian/pool/main/libt/libtext-csv-perl/libtext-csv-perl_1.95-1.debian.tar.xz deblicense/
+URL = https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
+ARCHIVES = 
 
 include ../common/Makefile.common
