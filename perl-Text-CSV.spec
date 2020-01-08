@@ -4,12 +4,13 @@
 #
 Name     : perl-Text-CSV
 Version  : 2.00
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
-Summary  : comma-separated values manipulator
+Summary  : 'comma-separated values manipulator (using XS or PurePerl)'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Text-CSV-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -24,14 +25,23 @@ Summary: dev components for the perl-Text-CSV package.
 Group: Development
 Provides: perl-Text-CSV-devel = %{version}-%{release}
 Requires: perl-Text-CSV = %{version}-%{release}
-Requires: perl-Text-CSV = %{version}-%{release}
 
 %description dev
 dev components for the perl-Text-CSV package.
 
 
+%package perl
+Summary: perl components for the perl-Text-CSV package.
+Group: Default
+Requires: perl-Text-CSV = %{version}-%{release}
+
+%description perl
+perl components for the perl-Text-CSV package.
+
+
 %prep
 %setup -q -n Text-CSV-2.00
+cd %{_builddir}/Text-CSV-2.00
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -67,10 +77,13 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Text/CSV.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Text/CSV_PP.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Text::CSV.3
 /usr/share/man/man3/Text::CSV_PP.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Text/CSV.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Text/CSV_PP.pm
