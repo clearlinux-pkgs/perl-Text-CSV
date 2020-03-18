@@ -4,7 +4,7 @@
 #
 Name     : perl-Text-CSV
 Version  : 2.00
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.00.tar.gz
 Summary  : 'comma-separated values manipulator (using XS or PurePerl)'
@@ -85,5 +85,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Text/CSV.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Text/CSV_PP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Text/CSV.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Text/CSV_PP.pm
