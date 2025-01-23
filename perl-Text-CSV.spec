@@ -6,16 +6,15 @@
 # autospec commit: 94c6be0
 #
 Name     : perl-Text-CSV
-Version  : 2.04
-Release  : 37
-URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.04.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.04.tar.gz
+Version  : 2.05
+Release  : 38
+URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.05.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.05.tar.gz
 Summary  : 'comma-separated values manipulator (using XS or PurePerl)'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Text-CSV-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
-BuildRequires : perl(Getopt::Long)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -47,8 +46,8 @@ perl components for the perl-Text-CSV package.
 
 
 %prep
-%setup -q -n Text-CSV-2.04
-cd %{_builddir}/Text-CSV-2.04
+%setup -q -n Text-CSV-2.05
+cd %{_builddir}/Text-CSV-2.05
 
 %build
 export http_proxy=http://127.0.0.1:9/
