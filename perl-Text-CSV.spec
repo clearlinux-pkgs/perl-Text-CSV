@@ -7,7 +7,7 @@
 #
 Name     : perl-Text-CSV
 Version  : 2.06
-Release  : 39
+Release  : 40
 URL      : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.06.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/Text-CSV-2.06.tar.gz
 Summary  : 'comma-separated values manipulator (using XS or PurePerl)'
